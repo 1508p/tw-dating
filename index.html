@@ -1,1 +1,289 @@
-5588
+<html lang="en" data-dpr="1" style="font-size: 39px;"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>秀場直播</title>
+    <script type="text/javascript" src="mobCommon.min.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript" src="rem.min.js"></script>
+    <style>@charset "utf-8";html{color:#000;background:#fff;overflow-y:scroll;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%}html *{outline:0;-webkit-text-size-adjust:none;-webkit-tap-highlight-color:rgba(0,0,0,0)}html,body{font-family:sans-serif}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{margin:0;padding:0}input,select,textarea{font-size:100%}table{border-collapse:collapse;border-spacing:0}fieldset,img{border:0}abbr,acronym{border:0;font-variant:normal}del{text-decoration:line-through}address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:500}ol,ul{list-style:none}caption,th{text-align:left}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:500}q:before,q:after{content:''}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}a:hover{text-decoration:underline}ins,a{text-decoration:none}</style>
+
+    <style>
+        *{ margin: 0rem; padding: 0rem; line-height: 100%; font-style: normal; list-style: none; font-size: .32rem; color: #fff;}
+        .wrap{ width: 100%; height: 100%; overflow: hidden; position: relative;}
+        .wrap-section{width: 100%; height: 100%;}
+
+        .pic{ width:33.3333%; background: #000; float: left; position: relative;}
+        .pic img{width:100%;display:block;}
+        .pic .mask{position: absolute; top: 0; left: 0; right: 0; bottom: 0; background:rgba(0,0,0,.2);}
+        .wrap-head{width: 100%; position: fixed; top: 0rem; z-index: 1; background: rgba(0,0,0,.4); display: flex; justify-content: center; color: #333; }
+        .wrap-head-main{width: 100%; padding: 0.2rem; overflow: hidden; box-sizing: border-box;}
+        .wrap-head-main div{ text-align: center; justify-content: space-between; padding:.2rem 0rem;}
+        .wrap-head-main div p{ font-size: 15px;color:#fff}
+        .wrap-head-main div p span{ color:#fff; padding:0rem .1rem;}
+        .downLoad{ position: fixed; width: 6rem; height: 1rem; text-align: center; line-height: 1rem; border-radius: 5rem; background-color: rgb(181, 34, 52); transform: translate(-50%, 0px); left: 50%; bottom: 1rem;}
+        .logo{ position: fixed; top:87%; left: 50%; transform: translate(-50%, -120%); width: 6rem;}
+        .logo video{ display: block; width: 100%;position: relative;z-index: 10;}
+        .logo span { display: block; width: 70px;height: 70px;background: #fff;position: absolute;z-index: 5;}
+        .logo .j1 {left: -6px;top:-6px;}
+        .logo .j2 {right: -6px;top: -6px;}
+        .logo .j3 {left: -6px;bottom: -6px;}
+        .logo .j4 {right: -6px;bottom: -6px;}
+    </style>
+
+<style data-id="immersive-translate-input-injected-css">.immersive-translate-input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 2147483647;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.immersive-translate-input-loading {
+  --loading-color: #f78fb6;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: block;
+  margin: 12px auto;
+  position: relative;
+  color: white;
+  left: -100px;
+  box-sizing: border-box;
+  animation: immersiveTranslateShadowRolling 1.5s linear infinite;
+}
+
+@keyframes immersiveTranslateShadowRolling {
+  0% {
+    box-shadow: 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  12% {
+    box-shadow: 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  25% {
+    box-shadow: 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  36% {
+    box-shadow: 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color), 0px 0 rgba(255, 255, 255, 0);
+  }
+
+  50% {
+    box-shadow: 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color), 100px 0 var(--loading-color);
+  }
+
+  62% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color), 110px 0 var(--loading-color);
+  }
+
+  75% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color), 120px 0 var(--loading-color);
+  }
+
+  87% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 130px 0 var(--loading-color);
+  }
+
+  100% {
+    box-shadow: 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0), 200px 0 rgba(255, 255, 255, 0);
+  }
+}
+
+
+.immersive-translate-search-recomend {
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  position: relative;
+  font-size: 16px;
+}
+.immersive-translate-search-enhancement-en-title {
+  color: #4d5156;
+}
+/* dark */
+@media (prefers-color-scheme: dark) {
+  .immersive-translate-search-recomend {
+    border: 1px solid #3c4043;
+  }
+  .immersive-translate-close-action svg {
+    fill: #bdc1c6;
+  }
+
+.immersive-translate-search-enhancement-en-title {
+  color: #bdc1c6;
+}
+}
+
+
+.immersive-translate-search-settings {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  cursor: pointer;
+}
+
+.immersive-translate-search-recomend::before {
+  /* content: " "; */
+  /* width: 20px; */
+  /* height: 20px; */
+  /* top: 16px; */
+  /* position: absolute; */
+  /* background: center / contain url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAMAAABEpIrGAAAAxlBMVEUAAADpTInqTIjpSofnSIfqS4nfS4XqS4nqTIjsTYnrTInqTIroS4jvQIDqTIn////+/v7rSYjpTIn8/v7uaZzrTIr9/f3wfansWJL88/b85e73qc39+/v3xNnylrvrVI/98fb62Obva5/8+fr76vH4y9zpSIj74e353Oj1ocTzm77xhK/veKbtYpjsXJTqU47oTInxjrXyh7L99fj40eH2ttH1udD3sc31ssz1rMnykLXucqPtbqD85e/1xdn2u9DzqcXrUY6FaJb8AAAADnRSTlMA34BgIM8Q37/fz7+/EGOHcVQAAAGhSURBVDjLhZPncuowEEZFTW7bXVU7xsYYTO/p7bb3f6lICIOYJOT4h7/VnFmvrBFjrF3/CR/SajBHswafctG0Qg3O8O0Xa8BZ6uw7eLjqr30SofCDVSkemMinfL1ecy20r5ygR5zz3ArcAqJExPTPKhDENEmS30Q9+yo4lEQkqVTiIEAHCT10xWERRdH0Bq0aCOPZNDV3s0xaYce1lHEoDHU8wEh3qRJypNcTAeKUIjgKMeGLDoRCLVLTVf+Ownj8Kk6H9HM6QXPgYjQSB0F00EJEu10ILQrs/QeP77BSSr0MzLOyuJJQbnUoOOIUI/A8EeJk9E4YUHUWiRyTVKGgQUB8/3e/NpdGlfI+FMQyWsCBWyz4A/ZyHXyiiz0Ne5aGZssoxRmcChw8/EFKQ5JwwkUo3FRT5yXS7q+Y/rHDZmFktzpGMvO+5QofA4FPpEmGw+EWRCFvnaof7Zhe8NuYSLR0xErKLThUSs8gnODh87ssy6438yzbLzxl012HS19vfCf3CNhnbWOL1eEsDda+gDPUvri8tSZzNFrwIZf1NmNvqC1I/t8j7nYAAAAASUVORK5CYII='); */
+}
+
+.immersive-translate-search-title {}
+
+.immersive-translate-search-title-wrapper {}
+
+.immersive-translate-search-time {
+  font-size: 12px;
+  margin: 4px 0 24px;
+  color: #70757a;
+}
+
+.immersive-translate-expand-items {
+  display: none;
+}
+
+.immersive-translate-search-more {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.immersive-translate-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.immersive-translate-modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 500px;
+  font-family: system-ui, -apple-system, "Segoe UI", "Roboto", "Ubuntu",
+    "Cantarell", "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+.immersive-translate-modal-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+  color: hsl(205, 20%, 32%);
+}
+
+.immersive-translate-modal-body {
+  color: hsl(205, 20%, 32%)
+}
+
+.immersive-translate-close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.immersive-translate-close:hover,
+.immersive-translate-close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.immersive-translate-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.immersive-translate-btn {
+  color: #fff;
+  background-color: #ea4c89;
+  border: none;
+  font-size: 14px;
+  margin: 5px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.immersive-translate-cancel-btn {
+  /* gray color */
+  background-color: rgb(89, 107, 120);
+}
+
+.immersive-translate-btn:hover {
+  background-color: #f082ac;
+}
+
+.immersive-translate-cancel-btn:hover {
+  background-color: hsl(205, 20%, 32%);
+}
+
+
+.immersive-translate-btn svg {
+  margin-right: 5px;
+}
+
+.immersive-translate-link {
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-drag: none;
+  text-decoration: none;
+  color: #007bff;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, .1);
+}
+
+.immersive-translate-modal input[type="radio"] {
+  margin: 0 6px 16px;
+  cursor: pointer;
+}
+
+.immersive-translate-modal label {
+  cursor: pointer;
+}
+
+.immersive-translate-close-action {
+  position: absolute;
+  top: 2px;
+  right: 0px;
+  cursor: pointer;
+}
+</style></head>
+<body style="font-size: 12px;">
+    <div class="wrap">
+        <div class="wrap-head">
+            <div class="wrap-head-main">
+                <div>
+                    <p>想要一起玩高難度動作的約會麽...我願意接受挑戰！</p>
+                </div>
+            </div>
+        </div>   
+        <div class="wrap-section"><div class="pic" t1="平面模特" t2="19岁" t3="86/61/90" t4="上海" t5="你玩互动厉害吗">  <img imgid="9" types="sexy_no" src="9.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="舞蹈老师" t2="22岁" t3="86/63/91" t4="南京" t5="热辣爵士">  <img imgid="13" types="sexy_no" src="13.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="秘书" t2="22岁" t3="84/64/88" t4="山西" t5="休闲时刻">  <img imgid="15" types="sexy_no" src="15.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="可爱萝莉" t2="20岁" t3="82/65/88" t4="杭州" t5="我的声音超级萌哦">  <img imgid="18" types="sexy_no" src="18.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="美甲店老板" t2="23岁" t3="86/61/90" t4="陕西" t5="软妹子">  <img imgid="7" types="sexy_no" src="7.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="幼师    " t2="19岁" t3="86/62/90" t4="新疆" t5="24h在线">  <img imgid="22" types="sexy_no" src="22.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="HR总监" t2="25岁" t3="86/60/90" t4="山东" t5="求守护">  <img imgid="25" types="sexy_no" src="25.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="淘宝店主" t2="21岁" t3="84/65/88" t4="重庆" t5="听我唱歌吗">  <img imgid="29" types="sexy_no" src="29.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="夜店DJ" t2="19岁" t3="86/63/91" t4="哈尔滨" t5="你喜欢玩什么互动">  <img imgid="1" types="sexy_no" src="1.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="儿科医生" t2="25岁" t3="85/61/88" t4="天津 " t5="听我唱歌">  <img imgid="30" types="sexy_no" src="30.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="主持人" t2="24岁" t3="85/60/89" t4="辽宁" t5="情感咨询">  <img imgid="12" types="sexy_no" src="12.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="新晋网红" t2="21岁" t3="84/59/88" t4="苏州" t5="会唱会跳">  <img imgid="2" types="sexy_no" src="2.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="可爱护士" t2="23岁" t3="86/61/90" t4="广州 " t5="一起聊天哇">  <img imgid="14" types="sexy_no" src="14.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="空姐直播" t2="24岁" t3="87/61/89" t4="江苏" t5="聊聊天">  <img imgid="6" types="sexy_no" src="6.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="美女导游" t2="24岁" t3="83/65/89" t4="河北" t5="尬聊哇 哈哈 ">  <img imgid="20" types="sexy_no" src="20.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="美女律师" t2="24岁" t3="85/60/89" t4="广东 " t5="喵喵喵">  <img imgid="5" types="sexy_no" src="5.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="大学校花" t2="19岁" t3="86/62/90" t4="武汉" t5="看我跳舞">  <img imgid="27" types="sexy_no" src="27.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="软妹子" t2="20岁" t3="85/63/90" t4="北京" t5="一起聊天">  <img imgid="23" types="sexy_no" src="23.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="实习生" t2="19岁" t3="85/60/88" t4="深圳" t5="花季少女">  <img imgid="26" types="sexy_no" src="26.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="职场小白" t2="19岁" t3="84/59/88" t4="云南 " t5="我在跳舞哦">  <img imgid="8" types="sexy_no" src="8.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="女博士" t2="27岁" t3="86/63/91" t4="上海" t5="去旅游">  <img imgid="10" types="sexy_no" src="10.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="私人助理" t2="20岁" t3="86/61/89" t4="浙江" t5="一起玩互动">  <img imgid="21" types="sexy_no" src="21.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="健身私教" t2="20岁" t3="87/62/90" t4="黑龙江" t5="锻炼身体">  <img imgid="19" types="sexy_no" src="19.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="数学老师" t2="22岁" t3="85/63/90" t4="杭州" t5="不要欺负我">  <img imgid="16" types="sexy_no" src="16.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="芭蕾演员" t2="22岁" t3="85/61/88" t4="昆明" t5="我会跳舞哦">  <img imgid="17" types="sexy_no" src="17.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="美女coser" t2="21岁" t3="83/64/88" t4="北京" t5="我互动玩的贼好">  <img imgid="24" types="sexy_no" src="24.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="家庭主妇" t2="25岁" t3="84/64/88" t4="海南 " t5="进入直播间">  <img imgid="3" types="sexy_no" src="3.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="酒吧歌手" t2="24岁" t3="84/59/88" t4="成都" t5="天籁歌神">  <img imgid="4" types="sexy_no" src="4.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="美女主播" t2="21岁" t3="83/62/87" t4="浙江" t5="陪我聊天吧">  <img imgid="28" types="sexy_no" src="28.jpg?id=2020052101" class="gray">  <em class="mask"></em></div><div class="pic" t1="大学老师" t2="25岁" t3="84/65/88" t4="沈阳 " t5="快来捧场">  <img imgid="11" types="sexy_no" src="11.jpg?id=2020052101" class="gray">  <em class="mask"></em></div></div>
+        <div class="logo"><a href="http://www.baidu.com"><video id="myvideo" autoplay="autoplay" muted="" src="mk2.mp4?id=2020052101" loop="" link="/undefined">Your browser does not support the video tag.</video></a><span class="j1"></span><span class="j2"></span><span class="j3"></span><span class="j4"></span></div>
+        <a href="http://www.baidu.com"><div class="downLoad">開始約會</div></a>
+    </div>
+</body><div id="immersive-translate-popup" style="all: initial"></div></html>
